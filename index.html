@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74682068-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/knockout.js"></script>
+    <script src="app/allmy.js"></script>
+  </head>
+
+  <!-- placeholder divs -->
+  <div id="overlay" class="overlay"></div>
+  <div class="bg">
+      <img src="i/wedding.jpg"><!-- avoid flicker of loading on domReady -->
+  </div>
+
+  <div id="menuBars">
+      <!-- HEADER = masthead,navMenu,services listing -->
+      <div class="header-row-1">
+          <div id='masthead'>
+              <span id="masthead-left">Opificer Media</span>
+              <span id="masthead-right">Uncommon Creativity</span>
+          </div>
+          <div class="header-menu">
+            <ul><!-- name is for finding the page this link goes with -->
+                <li><a class="header-menu-link" name="Contact" href="#Contact">Contact</a></li>
+                <li><a class="header-menu-link" name="About" href="#About">About</a></li>
+                <li><a class="header-menu-link" name="Blog" href="http://opificermedia.com/wordpress">Blog</a></li>
+                <li class="social-icon-container last">
+                    <a href="https://www.youtube.com/user/OpificerMedia" target="_blank"
+                       class="youtube-icon"></a>
+                    <a href="https://vimeo.com/user39399339" target="_blank" class="vimeo-icon"></a>
+                    <a href="https://www.facebook.com/OpificerMedia" target="_blank" class="facebook-icon"></a>
+                    <a href="https://instagram.com/opificermedia" target="_blank" class="instagram-icon"></a>
+                </li>
+            </ul>
+          </div>
+      </div>
+    <div id='header-row-2' class='services'>
+      <ul>
+        <li>
+          <a class="service active-service"
+             data-name="weddings"
+             data-img-url="i/wedding.jpg"
+             data-blurb-title="Your Big Day"
+             data-blurb-short="We offer videography services for a range of budgets. From simple ceremony coverage, to full day shoots."
+             data-blurb-more="Your wedding day should be one of the best days of your life, and Opificer Media wants to ensure you're able to relive that momentous day with our video services. Our philosophy to capturing weddings is to make sure we make the bride and groom get what they want while being as least intrusive as possible. <br><br>Our services can be a small scale as two cameras to multiple cameras and operators working in concert with your wedding coordinator and/or DJ. We can capture just your wedding reception, or spend the entire day with you for an amazing behind the scenes bonus video.<br><br>We shoot on state of the art HD video cameras, and can accommodate various levels of cinematic style videography. Your video will be authored to both DVD and BluRay discs and can also be provided as a digital video file for the highest quality archival version of your big day.<br><br>"
+             data-blurb-more-vimeo-id="131989871"
+             href="#">
+              Weddings
+          </a>
+        </li>
+        <li>
+          <a class="service"
+             data-name="feature-films"
+             data-img-url="i/film.jpg"
+             data-blurb-title="Love, Concord"
+             data-blurb-short="Director Gustavo Guardado's feature debut is a teenage romantic comedy set in his home town of Concord, Ca."
+             data-blurb-more="Love, Concord is Opificer Media's first feature film and the feature directorial debut of Gustavo Guardado. This independent film was self financed and produced through the hard work and dedication of Gustavo's cast and crew. Many of the crewmembers were former students of Guardado who taught at his alma mater St. Mary's College of California, prior to making the film. Both lead stars Jorge Diaz and Angelina Leon are also alumni of St. Mary's who met Guardado his first year as a professor at the small liberal arts college. Producer Virginia Saenz McCarthy is also alumni of SMC, and currently teaches a course on independent film there as well."
+             data-blurb-more-vimeo-id="132158876"
+             href="#">
+              Feature Films
+          </a>
+        </li>
+        <li>
+          <a class="service"
+             data-name="student-film-festival"
+             data-img-url="i/student-film-festival.jpg"
+             data-blurb-title="Film Festival"
+             data-blurb-short="The 4th Annual, 2017 Student Film Festival will be Thursday November 9th at 7pm in the Heritage High School Theater, in Brentwood Ca."
+             data-blurb-more="To submit your student film click on the submit button below."
+             data-blurb-custom-html="<div class='film-button-div'><a class='film-button' href='https://filmfreeway.com/festival/OpificerMediaStudentFilmFestival'>Submit Film</a></div>"
+             href="#">Student Film Festival
+          </a>
+        </li>
+        <li>
+            <!--  https://youtu.be/Cs3SsZaMcFQ  -->
+          <a class="service"
+             data-name="commercials"
+             data-img-url="i/commercial.jpg"
+             data-blurb-title="Commercials"
+             data-blurb-short="If you're new to broadcast advertising we can help you conceive a campaign, shoot it, edit it, and deliver it to your local TV advertisers."
+             data-blurb-more="Making your business's first commercial can be intimidating but that's where Opificer Media can help. Weather you have no concept at all or you know exactly what you want but simply need a production company to execute it, our goal is the same which is to tell your company's story.<br><br>Or perhaps you don't need a TV commercial, but more of a social media video. We can produce a video profile of your business with cinematic videography to showcase the amazing work you and your employees put into your product or services. <br><br>Your commercial or profile can be as small scale or ambitious as your budget permits. Opificer Media will never over sell you a service you don't need or want. But regardless of your budget you'll always receive the advice and direction of film school trained professional."
+             data-blurb-more-youtube-id="Cs3SsZaMcFQ"
+             href="#">
+              Commercials
+          </a>
+        </li>
+        <li class="last">
+          <a class="service"
+             data-name="all"
+             data-img-url="i/all.jpg"
+             href="#">
+              All
+         </a>
+        </li>
+      </ul>
+    </div><!-- end cats div -->
+  </div><!-- end menuBarsDiv -->
+
+  <!-- "overlay" the menubars so other elements wrap accordingly -->
+  <div class="menuBarsSpacer"></div>
+
+  <div id="all">
+      <ul><li>
+          <a data-type='youtube' data-id='LhmXOXEDeys'><img src="i/thumbs/demo.jpg"></a>
+          <div class="all-img-cap">
+              <h3>General Demo Reel</h3>
+              <h4>Opificer Media</h4>
+          </div>
+      </li><li>
+          <a data-type='vimeo' data-id='131989871'><img src="i/thumbs/wedding.jpg"></a>
+          <div class="all-img-cap">
+            <h3>Ashley & Philip</h3>
+            <h4>Wedding Montage</h4>
+          </div>
+      </li><li>
+          <a data-type='youtube' data-id='g74KgN7oRm8'><img src="i/thumbs/AmbulanteThumb.png"></a>
+          <div class="all-img-cap">
+            <h3>Ambulante Festival</h3>
+            <h4>Event Commercial Video</h4>
+          </div>
+        </li>
+      </li><li>
+          <a data-type='youtube' data-id='Cs3SsZaMcFQ'><img src="i/thumbs/bella.jpg"></a>
+          <div class="all-img-cap">
+            <h3>Salon Bella</h3>
+            <h4>Commercial</h4>
+          </div>
+      </li><li>
+          <a data-type='youtube' data-id='5FXBUEsg0s4'><img src="i/thumbs/noodles.jpg"></a>
+          <div class="all-img-cap">
+            <h3>Oodles of Noodles</h3>
+            <h4>Commercial</h4>
+          </div>
+        </li>
+      </li><li>
+          <a data-type='youtube' data-id='hvSqAficwVU'><img src="i/thumbs/FarleyThumb.jpg"></a>
+          <div class="all-img-cap">
+            <h3>Tim Farley Crawford Award</h3>
+            <h4>Award Presentation Video</h4>
+          </div>
+        </li>
+      </li><li>
+          <a data-type='youtube' data-id='yKpyjVM-zTo'><img src="i/thumbs/StudentFilmFest.png"></a>
+          <div class="all-img-cap">
+            <h3>Media Student Film Festival (BTS)</h3>
+            <h4>Behind the Scenes</h4>
+          </div>
+        </li>
+      </li><li>
+          <a data-type='vimeo' data-id='204984212'><img src="i/thumbs/TributesE1.png"></a>
+          <div class="all-img-cap">
+            <h3>Tributes to Passion (Episdode 1)</h3>
+            <h4>Web Series</h4>
+          </div>
+        </li>
+      </li><li>
+          <a data-type='vimeo' data-id='201152927'><img src="i/thumbs/RuchiWed.png"></a>
+          <div class="all-img-cap">
+            <h3>Ruchi & Mitul's Wedding</h3>
+            <h4>Wedding Montage</h4>
+          </div>
+        </li>
+      </li><li>
+          <a data-type='vimeo' data-id='225719068'><img src="i/thumbs/TributesE2.png"></a>
+          <div class="all-img-cap">
+            <h3>Tributes to Passion (Episode 2)</h3>
+            <h4>Web Series</h4>
+          </div>
+        </li>
+      </li><li>
+          <a data-type='vimeo' data-id='254148085'><img src="i/thumbs/TributesE3.png"></a>
+          <div class="all-img-cap">
+            <h3>Tributes to Passion (Episode 3)</h3>
+            <h4>Web Series</h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  <div id="mainContent">
+    <div id="blurbDiv" class="siteText">
+        <div id="blurbTitle"></div>
+        <div id="blurbText" class="seethru"></div>
+        <a id="blurbMore" href="#more">More</a>
+    </div>
+    <div id="moreDiv" class="siteText"></div>
+  </div>
+
+  <div id="menuPageContact" class="menuPage">
+      <table id="contactDetails">
+      <tr><td>Phone:</td><td>925-408-0315</td></tr>
+      <tr><td>Email:</td><td><a class="contact-link" href="mailto:gustavo@opificermedia.com">gustavo@opificermedia.com</a></td></tr>
+      </table>
+      <!-- <input type="text" data-bind="value: myValue, valueUpdate='keypress'"> -->
+  </div>
+
+  <div id="menuPageAbout" class="menuPage">
+      People love a great story. Now with the prevalence of high quality/low cost video technology you don't have to be a Hollywood star to make a great visual story, and that's where Opificer Media comes in. We want to help you share your story. Video is no longer only for multimillion dollar studios and companies, technology has opened the opportunities for everyone to capture brilliant imagery and thus allow one to share their love, life, message, talents, products, business or art with the masses.<br><br>
+      Who are we to be so bold to and privileged to offer to share your visual story? We are a start up videography company founded and led by Gustavo Guardado, Jr.  Gus, as most people call him, has a passion for videography but more importantly in telling stories through motion pictures. He's an accomplished videographer, director, writer, producer, and editor. He received his master's of fine art in film production in 2005. Recently, Gus proudly released his first independent feature film: Love, Concord which premiered at the 2012 HBO NY Latino Film Festival and was released on iTunes and Hulu in 2013. Gus is a skilled artist and that's where the name Opificer comes from, it's an old English word literally meaning "skilled artist."<br><br>
+      So what's your story? Because Opificer Media wants to help you tell it. Is it your wedding story? Gus has been shooting weddings for over 15 years! Are you a business that needs a commercial, wouldn't you rather have a cinematically educated director help you shoot it than some corporate cable company that just sees business first and artistic creativity second? Is your story about your athletic talents? Then why not let us help you put together you scouting video of your best performances, interviews, and achievements?<br><br>
+      Lastly, Opificer Media is about giving young and hungry videographers their opportunity to thrive as artist. Gus is a Video Teacher at Heritage High School and some of his stable of videographers are former or current students. Thus, Opificer Media gives high school students much needed real world experience to not only better students education of videography, but work experience to kickstart their careers. Many of Gus' former students/videgraphers have moved on to become accomplished video editors, independent filmmakers, and even journalists.<br><br>So when you choose Opificer Media to help you tell your story via video you'll always get a product that's creative and which puts the art first and the profit margins last. We want to make art of your story, and a video you're proud to share with the world.
+  </div>
+
+  <div id="movieContainerDiv" class="centered">
+      <a id="movieClose" href="#close" title="Close" class="close">X</a>
+      <div id="movieDiv" class="centered">
+          <!-- youtube or vimeo here -->
+      </div>
+  </div>
+
+  <div id="vimeo">
+      <iframe data-src="https://player.vimeo.com/video/"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+              class="centered-iframe">
+      </iframe>
+  </div>
+
+  <div id="youtube">
+      <iframe data-src="https://www.youtube.com/embed/"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+              class="centered-iframe">
+      </iframe>
+  </div>
+
+</body>
+</html>
