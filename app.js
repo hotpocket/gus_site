@@ -10,3 +10,4 @@ requirejs.config({  //  www/js/app/lib/app.js
 
 // app: 'app/path' in requirejs config corresponds to the app in 'app/main' below
 requirejs(['app/main']);
+
